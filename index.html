@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git & GitHub Study Material</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Git & GitHub Study Material</h1>
+    <p>A basic introduction to Git, GitHub and version control.</p>
+
+    <nav>
+        <a href="#setup">Setup</a>
+        <a href="#git">Git</a>
+        <a href="#github">GitHub</a>
+        <a href="#version-control">Version Control</a>
+        <a href="#concepts">Concepts</a>
+        <a href="#commands">Commands</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#branches">Branches</a>
+        <a href="#pull-requests">Pull Requests</a>
+    </nav>
+</header>
+
+
+<main>
+
+    <!-- SETUP -->
+
+    <section id="setup">
+        <h2>1. Setup</h2>
+
+        <p>
+            Before working with GitHub, install Git and a code editor.
+        </p>
+
+        <h3>Git</h3>
+
+        <p>
+            Git is the version control system used to track changes
+            in your projects.
+        </p>
+
+        <p>
+            <a class="download-link"
+               href="https://git-scm.com/install/"
+               target="_blank">
+                Download / Install Git →
+            </a>
+        </p>
+
+        <p>
+            Git provides installers and installation instructions
+            for Windows, macOS and Linux.
+        </p>
+
+
+        <h3>Visual Studio Code</h3>
+
+        <p>
+            Visual Studio Code is a code editor that can be used
+            to create and edit your project files.
+        </p>
+
+        <p>
+            <a class="download-link"
+               href="https://code.visualstudio.com/download"
+               target="_blank">
+                Download Visual Studio Code →
+            </a>
+        </p>
+
+
+        <h3>Check Git Installation</h3>
+
+        <div class="command-box">
+            <code>git --version</code>
+            <button class="copy-btn" data-command="git --version">
+                Copy
+            </button>
+        </div>
+
+        <p>
+            If Git is installed correctly, the terminal will display
+            the installed Git version.
+        </p>
+
+    </section>
+
+
+    <!-- GIT -->
+
+    <section id="git">
+        <h2>2. What is Git?</h2>
+
+        <p>
+            Git is a version control system used to track changes
+            in files and projects.
+        </p>
+
+        <p>
+            Git runs on your computer and keeps a history of
+            changes made to your project.
+        </p>
+
+        <h3>Example</h3>
+
+        <pre><code>Version 1
+    ↓
+Version 2
+    ↓
+Version 3
+    ↓
+Version 4</code></pre>
+    </section>
+
+
+    <!-- GITHUB -->
+
+    <section id="github">
+        <h2>3. What is GitHub?</h2>
+
+        <p>
+            GitHub is an online platform where Git repositories
+            can be stored and shared.
+        </p>
+
+        <p>
+            GitHub also provides features for collaboration,
+            code review, issue tracking and project management.
+        </p>
+
+        <h3>Git vs GitHub</h3>
+
+        <ul>
+            <li>
+                <strong>Git:</strong>
+                Version control system.
+            </li>
+
+            <li>
+                <strong>GitHub:</strong>
+                Online platform for hosting and collaborating
+                on Git repositories.
+            </li>
+        </ul>
+    </section>
+
+
+    <!-- VERSION CONTROL -->
+
+    <section id="version-control">
+        <h2>4. What is Version Control?</h2>
+
+        <p>
+            Version control means keeping track of the changes
+            made to a project over time.
+        </p>
+
+        <p>
+            Instead of creating multiple copies of a project,
+            Git keeps a history of the different versions.
+        </p>
+
+        <h3>Without Git</h3>
+
+        <pre><code>website-final
+website-final-new
+website-final-new2
+website-final-latest</code></pre>
+
+        <h3>With Git</h3>
+
+        <pre><code>Project
+   |
+   ├── Commit 1
+   ├── Commit 2
+   ├── Commit 3
+   └── Commit 4</code></pre>
+    </section>
+
+
+    <!-- CONCEPTS -->
+
+    <section id="concepts">
+        <h2>5. Important Git Concepts</h2>
+
+        <h3>Repository</h3>
+
+        <p>
+            A repository is a project that is being tracked by Git.
+        </p>
+
+
+        <h3>Commit</h3>
+
+        <p>
+            A commit is a saved snapshot of changes in the project.
+        </p>
+
+
+        <h3>Staging</h3>
+
+        <p>
+            Staging means selecting the changes that you want to
+            include in your next commit.
+        </p>
+
+
+        <h3>Branch</h3>
+
+        <p>
+            A branch is a separate line of development.
+            It allows us to work on a feature without directly
+            changing the main branch.
+        </p>
+
+
+        <h3>Remote</h3>
+
+        <p>
+            A remote is a repository stored somewhere outside
+            your local computer, such as GitHub.
+        </p>
+
+
+        <h3>Pull Request</h3>
+
+        <p>
+            A Pull Request is a request to review and merge
+            changes from one branch into another.
+        </p>
+
+
+        <h3>Fork</h3>
+
+        <p>
+            A fork is your own copy of another GitHub repository.
+        </p>
+
+
+        <h3>Issue</h3>
+
+        <p>
+            Issues can be used to track bugs, tasks and feature requests.
+        </p>
+
+    </section>
+
+
+    <!-- STAGING -->
+
+    <section>
+        <h2>6. Working Directory, Staging Area and Repository</h2>
+
+        <pre><code>Working Directory
+       |
+       | git add
+       ↓
+Staging Area
+       |
+       | git commit
+       ↓
+Local Repository
+       |
+       | git push
+       ↓
+GitHub Repository</code></pre>
+
+
+        <h3>Working Directory</h3>
+
+        <p>
+            The files that you are currently working on.
+        </p>
+
+
+        <h3>Staging Area</h3>
+
+        <p>
+            The changes that you have selected for your next commit.
+        </p>
+
+
+        <h3>Local Repository</h3>
+
+        <p>
+            The Git history stored on your computer.
+        </p>
+
+
+        <h3>GitHub Repository</h3>
+
+        <p>
+            The remote copy of your repository stored on GitHub.
+        </p>
+
+    </section>
+
+
+    <!-- COMMANDS -->
+
+    <section id="commands">
+        <h2>7. Basic Git Commands</h2>
+
+        <p>
+            Click <strong>Copy</strong> to copy any command.
+        </p>
+
+
+        <h3>Check Git Version</h3>
+
+        <div class="command-box">
+            <code>git --version</code>
+            <button class="copy-btn" data-command="git --version">
+                Copy
+            </button>
+        </div>
+
+        <p>
+            Checks whether Git is installed and displays its version.
+        </p>
+
+
+        <h3>Initialize a Repository</h3>
+
+        <div class="command-box">
+            <code>git init</code>
+            <button class="copy-btn" data-command="git init">
+                Copy
+            </button>
+        </div>
+
+        <p>
+            Initializes Git in the current project folder.
+        </p>
+
+
+        <h3>Clone a Repository</h3>
+
+        <div class="command-box">
+            <code>git clone &lt;repository-url&gt;</code>
+            <button class="copy-btn"
+                    data-command="git clone <repository-url>">
+                Copy
+            </button>
+        </div>
+
+        <p>
+            Downloads an existing GitHub repository to your computer.
+        </p>
+
+
+        <h3>Check Repository Status</h3>
+
+        <div class="command-box">
+            <code>git status</code>
+            <button class="copy-btn" data-command="git status">
+                Copy
+            </button>
+        </div>
+
+        <p>
+            Shows the current status of files and changes.
+        </p>
+
+
+        <h3>Stage Changes</h3>
+
+        <div class="command-box">
+            <code>git add .</code>
+            <button class="copy-btn" data-command="git add .">
+                Copy
+            </button>
+        </div>
+
+        <p>
+            Stages all changed files for the next commit.
+        </p>
+
+
+        <h3>Commit Changes</h3>
+
+        <div class="command-box">
+            <code>git commit -m "Update project"</code>
+
+            <button class="copy-btn"
+                    data-command='git commit -m "Update project"'>
+                Copy
+            </button>
+        </div>
+
+        <p>
+            Saves the staged changes as a commit.
+        </p>
+
+
+        <h3>View Commit History</h3>
+
+        <div class="command-box">
+            <code>git log --oneline</code>
+
+            <button class="copy-btn"
+                    data-command="git log --oneline">
+                Copy
+            </button>
+        </div>
+
+
+        <h3>Push Changes</h3>
+
+        <div class="command-box">
+            <code>git push</code>
+
+            <button class="copy-btn"
+                    data-command="git push">
+                Copy
+            </button>
+        </div>
+
+        <p>
+            Uploads local commits to GitHub.
+        </p>
+
+
+        <h3>Pull Changes</h3>
+
+        <div class="command-box">
+            <code>git pull</code>
+
+            <button class="copy-btn"
+                    data-command="git pull">
+                Copy
+            </button>
+        </div>
+
+        <p>
+            Downloads the latest changes from GitHub.
+        </p>
+
+
+        <h3>View Branches</h3>
+
+        <div class="command-box">
+            <code>git branch</code>
+
+            <button class="copy-btn"
+                    data-command="git branch">
+                Copy
+            </button>
+        </div>
+
+
+        <h3>Create a New Branch</h3>
+
+        <div class="command-box">
+            <code>git switch -c feature-name</code>
+
+            <button class="copy-btn"
+                    data-command="git switch -c feature-name">
+                Copy
+            </button>
+        </div>
+
+
+        <h3>Switch Branch</h3>
+
+        <div class="command-box">
+            <code>git switch main</code>
+
+            <button class="copy-btn"
+                    data-command="git switch main">
+                Copy
+            </button>
+        </div>
+
+
+        <h3>View Changes</h3>
+
+        <div class="command-box">
+            <code>git diff</code>
+
+            <button class="copy-btn"
+                    data-command="git diff">
+                Copy
+            </button>
+        </div>
+
+
+        <h3>View Remote Repository</h3>
+
+        <div class="command-box">
+            <code>git remote -v</code>
+
+            <button class="copy-btn"
+                    data-command="git remote -v">
+                Copy
+            </button>
+        </div>
+
+    </section>
+
+
+    <!-- WORKFLOW -->
+
+    <section id="workflow">
+        <h2>8. Basic Git Workflow</h2>
+
+        <p>
+            The basic workflow is:
+        </p>
+
+        <pre><code>Make changes
+     ↓
+git status
+     ↓
+git add .
+     ↓
+git commit -m "message"
+     ↓
+git push</code></pre>
+
+
+        <h3>Example</h3>
+
+        <div class="command-box">
+            <code>
+                git status<br>
+                git add .<br>
+                git commit -m "Update README"<br>
+                git push
+            </code>
+
+            <button class="copy-btn"
+                    data-command='git status
+git add .
+git commit -m "Update README"
+git push'>
+                Copy
+            </button>
+        </div>
+
+    </section>
+
+
+    <!-- BRANCHES -->
+
+    <section id="branches">
+        <h2>9. Branches</h2>
+
+        <p>
+            Branches allow developers to work on different features
+            without directly changing the main branch.
+        </p>
+
+        <pre><code>              main
+                |
+        ----------------
+        |              |
+        ↓              ↓
+   login-feature   payment-feature
+        |              |
+        ↓              ↓
+      Work           Work</code></pre>
+
+
+        <h3>Create a Branch</h3>
+
+        <div class="command-box">
+            <code>git switch -c login-feature</code>
+
+            <button class="copy-btn"
+                    data-command="git switch -c login-feature">
+                Copy
+            </button>
+        </div>
+
+
+        <h3>Work on the Branch</h3>
+
+        <div class="command-box">
+            <code>
+                git add .<br>
+                git commit -m "Add login feature"<br>
+                git push -u origin login-feature
+            </code>
+
+            <button class="copy-btn"
+                    data-command='git add .
+git commit -m "Add login feature"
+git push -u origin login-feature'>
+                Copy
+            </button>
+        </div>
+
+    </section>
+
+
+    <!-- PULL REQUEST -->
+
+    <section id="pull-requests">
+        <h2>10. Pull Requests</h2>
+
+        <p>
+            A Pull Request allows developers to propose changes
+            and have them reviewed before merging them into another branch.
+        </p>
+
+        <h3>Typical Process</h3>
+
+        <pre><code>Create branch
+     ↓
+Make changes
+     ↓
+Commit changes
+     ↓
+Push branch
+     ↓
+Create Pull Request
+     ↓
+Code Review
+     ↓
+Merge</code></pre>
+
+        <p>
+            Pull Requests are commonly used when working with a team.
+        </p>
+
+    </section>
+
+
+    <!-- GITHUB FEATURES -->
+
+    <section>
+        <h2>11. GitHub Features</h2>
+
+        <ul>
+            <li>
+                <strong>Repositories:</strong>
+                Store projects.
+            </li>
+
+            <li>
+                <strong>Issues:</strong>
+                Track bugs and tasks.
+            </li>
+
+            <li>
+                <strong>Pull Requests:</strong>
+                Review and merge changes.
+            </li>
+
+            <li>
+                <strong>Branches:</strong>
+                Manage different lines of development.
+            </li>
+
+            <li>
+                <strong>Actions:</strong>
+                Automate development workflows.
+            </li>
+
+            <li>
+                <strong>README:</strong>
+                Document a project.
+            </li>
+
+            <li>
+                <strong>Forks:</strong>
+                Create your own copy of a repository.
+            </li>
+        </ul>
+
+    </section>
+
+
+    <!-- QUICK REFERENCE -->
+
+    <section>
+        <h2>12. Quick Reference</h2>
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Command</th>
+                    <th>Purpose</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td><code>git init</code></td>
+                    <td>Initialize Git</td>
+                </tr>
+
+                <tr>
+                    <td><code>git clone</code></td>
+                    <td>Download a repository</td>
+                </tr>
+
+                <tr>
+                    <td><code>git status</code></td>
+                    <td>Check repository status</td>
+                </tr>
+
+                <tr>
+                    <td><code>git add .</code></td>
+                    <td>Stage changes</td>
+                </tr>
+
+                <tr>
+                    <td><code>git commit</code></td>
+                    <td>Save changes in Git history</td>
+                </tr>
+
+                <tr>
+                    <td><code>git push</code></td>
+                    <td>Upload changes to GitHub</td>
+                </tr>
+
+                <tr>
+                    <td><code>git pull</code></td>
+                    <td>Download changes from GitHub</td>
+                </tr>
+
+                <tr>
+                    <td><code>git branch</code></td>
+                    <td>View branches</td>
+                </tr>
+
+                <tr>
+                    <td><code>git switch</code></td>
+                    <td>Switch branches</td>
+                </tr>
+
+                <tr>
+                    <td><code>git log</code></td>
+                    <td>View commit history</td>
+                </tr>
+
+                <tr>
+                    <td><code>git diff</code></td>
+                    <td>View changes</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+</main>
+
+
+<footer>
+    <p>Git & GitHub Study Material</p>
+</footer>
+
+
+<div id="toast">
+    Command copied!
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
